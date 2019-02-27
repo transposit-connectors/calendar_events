@@ -2,7 +2,10 @@
 
 This is a very simple Transposit application to demonstrate a few basic functions.
 
-Start by [viewing the app's code](https://console.transposit.com/t/transposit_sample/calendarevents), adding a key for your Google calendar, and running the `get_calendar_events` operation. In the **Results** tab, you should see some calendar event data returned in JSON format.
+  1. Start by [viewing the app's code](https://console.transposit.com/t/transposit_sample/calendar_events).
+  2. Add a key for your Google calendar.
+  3. Set the `calendarId` parameter to the email address associated with one of your calendars.
+  4. Run the `get_calendar_events` operation. In the **Results** tab, you should see some calendar event data returned in JSON format.
 
 Now, go ahead and fork the app so you can make changes and customize it the way you'd like.
 
