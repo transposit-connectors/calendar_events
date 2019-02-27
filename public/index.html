@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <!-- Transposit SDK -->
-  <script src="https://unpkg.com/transposit@^0.7.3/dist/bundle.prod.js"></script>
+  <script src="https://unpkg.com/transposit@^0.7.0/dist/bundle.prod.js"></script>
   <script>
     // These variables in triple curly braces are dynamically injected by Transposit and should not be modified
     const maintainer = "{{{maintainer}}}";
@@ -54,7 +54,7 @@
     $("#failure").hide();
     $("#success").hide();
 
-    transposit.runOperation("hello_world")
+    transposit.runOperation("get_calendar_events")
       .then((response) => {
         if (response.status !== "SUCCESS") {
           throw response;

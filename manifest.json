@@ -1,18 +1,33 @@
 {
   "v2": {
     "transposit": {
+      "dependencies": [{
+        "name": "transposit/google_calendar:v1.*.*",
+        "alias": "google_calendar"
+      }],
       "operations": [{
-        "id": "hello_world",
-        "description": "Returns \"Hello, world\" in different languages",
-        "function": {
-          "js": "hello_world.js"
+        "id": "get_calendar_events",
+        "tql": {
+          "parameters": [{
+            "name": "calendarId",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  AND timeMin = (select today from this.today_date)\n  LIMIT 5"
         },
         "access": {
           "requireUser": true
         }
+      }, {
+        "id": "today_date",
+        "function": {
+          "js": "today_date.js"
+        }
       }],
-      "javascriptAPIVersion": "3",
-      "source": "src"
+      "dataConnections": [{
+        "ref": "google_calendar.raw",
+        "requireConsumerSignin": true
+      }],
+      "javascriptAPIVersion": "3"
     }
   }
 }
