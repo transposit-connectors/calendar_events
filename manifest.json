@@ -28,6 +28,7 @@
         "requireConsumerSignin": true
       }],
       "javascriptAPIVersion": "3"
-    }
+    },
+    "description": "A simple Transposit application to demonstrate a few basic functions."
   }
 }
