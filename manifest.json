@@ -21,8 +21,7 @@
         }
       }],
       "dataConnections": [{
-        "ref": "google_calendar.raw",
-        "requireConsumerSignin": true
+        "ref": "google_calendar.raw"
       }],
       "javascriptAPIVersion": "3"
     },
