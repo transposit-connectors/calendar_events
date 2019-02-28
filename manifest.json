@@ -4,6 +4,9 @@
       "dependencies": [{
         "name": "transposit/google_calendar:v1.*.*",
         "alias": "google_calendar"
+      }, {
+        "name": "transposit/google_analytics:v1.*.*",
+        "alias": "google_analytics"
       }],
       "operations": [{
         "id": "get_calendar_events",
@@ -12,7 +15,10 @@
             "name": "calendarId",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  LIMIT 5"
+          "tql": "SELECT * FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  AND timeMin = (select today from this.today_date)\n  LIMIT 5"
+        },
+        "access": {
+          "requireUser": true
         }
       }, {
         "id": "today_date",
@@ -21,7 +27,8 @@
         }
       }],
       "dataConnections": [{
-        "ref": "google_calendar.raw"
+        "ref": "google_calendar.raw",
+        "requireConsumerSignin": true
       }],
       "javascriptAPIVersion": "3"
     },
