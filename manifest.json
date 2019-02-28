@@ -7,6 +7,9 @@
       }, {
         "name": "transposit/google_analytics:v1.*.*",
         "alias": "google_analytics"
+      }, {
+        "name": "transposit/shopify:v2.*.*",
+        "alias": "shopify"
       }],
       "operations": [{
         "id": "get_calendar_events",
