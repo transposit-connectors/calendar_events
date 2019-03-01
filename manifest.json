@@ -4,6 +4,12 @@
       "dependencies": [{
         "name": "transposit/google_calendar:v1.*.*",
         "alias": "google_calendar"
+      }, {
+        "name": "transposit/google_analytics:v1.*.*",
+        "alias": "google_analytics"
+      }, {
+        "name": "transposit/shopify:v2.*.*",
+        "alias": "shopify"
       }],
       "operations": [{
         "id": "get_calendar_events",
@@ -28,6 +34,7 @@
         "requireConsumerSignin": true
       }],
       "javascriptAPIVersion": "3"
-    }
+    },
+    "description": "A simple example demonstrating the use of a Transposit operation to get events from a Google calendar."
   }
 }
