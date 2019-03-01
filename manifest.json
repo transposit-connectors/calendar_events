@@ -35,6 +35,6 @@
       }],
       "javascriptAPIVersion": "3"
     },
-    "description": "A simple Transposit application to demonstrate a few basic functions."
+    "description": "A simple example demonstrating the use of a Transposit operation to get events from a Google calendar."
   }
 }
