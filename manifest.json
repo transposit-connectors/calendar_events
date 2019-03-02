@@ -5,9 +5,6 @@
         "name": "transposit/google_calendar:v1.*.*",
         "alias": "google_calendar"
       }, {
-        "name": "transposit/google_analytics:v1.*.*",
-        "alias": "google_analytics"
-      }, {
         "name": "transposit/shopify:v2.*.*",
         "alias": "shopify"
       }],
