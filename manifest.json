@@ -13,9 +13,6 @@
             "type": "STRING"
           }],
           "tql": "SELECT * FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  AND timeMin = (select today from this.today_date)\n  LIMIT 5"
-        },
-        "access": {
-          "requireUser": true
         }
       }, {
         "id": "today_date",
