@@ -4,9 +4,6 @@
       "dependencies": [{
         "name": "transposit/google_calendar:v1.*.*",
         "alias": "google_calendar"
-      }, {
-        "name": "transposit/shopify:v2.*.*",
-        "alias": "shopify"
       }],
       "operations": [{
         "id": "get_calendar_events",
