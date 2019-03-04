@@ -30,7 +30,7 @@ Next, return to the `get_calendar_events` operation, and add an `AND` clause to 
 ```sql
 SELECT * FROM google_calendar.get_calendar_events
   WHERE calendarId=@calendarId
-  AND timeMin = (select * from this.today_date)
+  AND timeMin = (select today from this.today_date)
   LIMIT 5
 ```
 
