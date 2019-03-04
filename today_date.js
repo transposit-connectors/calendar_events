@@ -1,6 +1,6 @@
 (params) => {
   return {
-    today: new Date()
+    today: new Date();
   };
 }
 
