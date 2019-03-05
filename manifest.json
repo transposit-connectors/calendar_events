@@ -12,7 +12,7 @@
             "name": "calendarId",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  LIMIT 5"
+          "tql": "SELECT summary, start FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  LIMIT 5"
         }
       }, {
         "id": "today_date",
