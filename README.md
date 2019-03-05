@@ -11,7 +11,7 @@ Now, go ahead and fork the app so you can make changes and customize it the way 
 
 ## Constrain the time range
 
-In your newly forked app, let's see how you can constrain the time range of calendar data returned, by specifying a `timeMin` per the Google Calendar API. Suppose we want to see events that begin today onward.
+In your newly forked app, let's see how you can constrain the time range of calendar data returned, by specifying a `timeMin` per the Google Calendar API. Suppose we want to see events that begin today onward, and we want to put them in a sensible order.
 
 Take a look at the JavaScript operation `today_date`, with the following code:
 
@@ -25,12 +25,14 @@ Take a look at the JavaScript operation `today_date`, with the following code:
 
 Run this JavaScript operation and observe the JSON result.
 
-Next, return to the `get_calendar_events` operation, and add an `AND` clause to specify `timeMin`:
+Next, return to the `get_calendar_events` operation, and add three `AND` clauses:
 
 ```sql
-SELECT * FROM google_calendar.get_calendar_events
+SELECT summary, start FROM google_calendar.get_calendar_events
   WHERE calendarId=@calendarId
-  AND timeMin = (select today from this.today_date)
+    AND timeMin = (select today from this.today_date)
+    AND singleEvents=true
+    AND orderBy="startTime"
   LIMIT 5
 ```
 
@@ -51,7 +53,7 @@ Click on **Authentication > Production Keys**, and enable the _Require users to 
 
 ## Use the operation in a hosted app page
 
-Click on **Code > Page template** to see the template for the hosted app page. Down around line 57 you'll see the operation called is `get_calendar_events`.
+Click on **Code > Page template** to see the template for the hosted app page. Down around line 57 you'll see the operation `get_calendar_events` called.
 
 Load the live hosted app (find your app's URL at **Deploy > Hosted Page**) and once you've signed in and supplied Google Calendar credentials, you'll see your calendar events there.
 
