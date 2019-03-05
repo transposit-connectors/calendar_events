@@ -13,6 +13,9 @@
             "type": "STRING"
           }],
           "tql": "SELECT summary, start FROM google_calendar.get_calendar_events\n  WHERE calendarId=@calendarId\n  LIMIT 5"
+        },
+        "access": {
+          "requireUser": true
         }
       }, {
         "id": "today_date",
