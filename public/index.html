@@ -53,8 +53,7 @@
   <script>
     $("#failure").hide();
     $("#success").hide();
-
-    transposit.runOperation("get_calendar_events")
+   	transposit.runOperation("get_calendar_events", {"calendarId":"primary"})
       .then((response) => {
         if (response.status !== "SUCCESS") {
           throw response;
