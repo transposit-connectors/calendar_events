@@ -32,6 +32,7 @@
       }],
       "javascriptAPIVersion": "3"
     },
-    "description": "A simple example demonstrating the use of a Transposit operation to get events from a Google calendar."
+    "description": "A simple example demonstrating the use of a Transposit operation to get events from a Google calendar.",
+    "displayName": "Get calendar events"
   }
 }
